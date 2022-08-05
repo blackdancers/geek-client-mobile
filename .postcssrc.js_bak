@@ -1,0 +1,12 @@
+// PostCSS 配置文件 作用：把 px 转为 rem
+// npm install postcss-pxtorem --save-dev
+ module.exports = {
+  plugins: {
+    'postcss-pxtorem': {
+      rootValue ({ file }) {
+        return file.indexOf('vant') !== -1 ? 37.5 : 75
+      },
+      propList: ['*']
+    }
+  }
+}
